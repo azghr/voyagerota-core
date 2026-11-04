@@ -247,7 +247,11 @@ export class ArtifactReleaseService {
     }
 
     const latestRelease = await ReleaseDAL.getLatestProductionRelease();
-    if (releaseId !== latestRelease!.getPublicId()) {
+    if (!latestRelease) {
+      throw new ApiError("No production release found!", StatusCodes.NOT_FOUND);
+    }
+
+    if (releaseId !== latestRelease.getPublicId()) {
       throw new ApiError("Only latest production release can be revoked!", StatusCodes.BAD_REQUEST);
     }
 
