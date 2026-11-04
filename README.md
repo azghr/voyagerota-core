@@ -3,8 +3,8 @@
 Backend platform for managing over-the-air (OTA) firmware releases for embedded devices.
 
 [![License](https://img.shields.io/github/license/mediocre9/voyagerota-core?color=0891B2)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-24.3.0-339933?logo=node.js\&logoColor=white)](#)
-[![SDK](https://img.shields.io/github/v/release/mediocre9/VoyagerOTAClient?label=VoyagerOTAClient%20SDK\&color=8B5CF6)](https://github.com/mediocre9/VoyagerOTAClient/releases)
+[![Node.js](https://img.shields.io/badge/node-24.3.0-339933?logo=node.js&logoColor=white)](#)
+[![SDK](https://img.shields.io/github/v/release/mediocre9/VoyagerOTAClient?label=VoyagerOTAClient%20SDK&color=8B5CF6)](https://github.com/mediocre9/VoyagerOTAClient/releases)
 
 ## What is VoyagerOTA?
 
@@ -51,6 +51,18 @@ npm run orphan-cron
 npm run purger-cron
 npm run dormant-project-cron
 npm run service-alert-cron
+```
+
+## Database Schema
+
+> [!IMPORTANT]
+> `db.sync()` only runs when `ENVIRONMENT=development`. In staging or production the schema is never touched at startup; apply changes with migrations instead (migration tooling setup is tracked as a separate task).
+
+```bash
+# development only: creates missing tables from the model definitions
+npm run dev
+
+# production: schema must be applied via migrations (not yet set up, see VOTA-022)
 ```
 
 ## Client Sdk Integration
