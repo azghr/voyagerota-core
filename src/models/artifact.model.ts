@@ -125,7 +125,7 @@ Artifact.init(
       allowNull: false,
     },
     build_status: {
-      type: DataTypes.ENUM("development-build", "production-build", "unknown-build"),
+      type: DataTypes.ENUM("staging-build", "production-build", "unknown-build"),
       defaultValue: "unknown-build",
       allowNull: false,
     },
