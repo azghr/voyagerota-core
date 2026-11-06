@@ -53,18 +53,6 @@ npm run dormant-project-cron
 npm run service-alert-cron
 ```
 
-## Database Schema
-
-> [!IMPORTANT]
-> `db.sync()` only runs when `ENVIRONMENT=development`. In staging or production the schema is never touched at startup; apply changes with migrations instead (migration tooling setup is tracked as a separate task).
-
-```bash
-# development only: creates missing tables from the model definitions
-npm run dev
-
-# production: schema must be applied via migrations (not yet set up, see VOTA-022)
-```
-
 ## Client Sdk Integration
 
 > [!TIP]
